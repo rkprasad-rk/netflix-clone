@@ -7,14 +7,18 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "airbnb",
     "airbnb-typescript",
+    "plugin:react/recommended",
     "prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: {
     project: "./tsconfig.json",
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "@typescript-eslint"],
   rules: {
     "react/react-in-jsx-scope": "off",
     "arrow-body-style": "off",

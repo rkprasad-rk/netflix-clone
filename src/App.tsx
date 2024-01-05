@@ -1,8 +1,10 @@
 import "./app.scss";
-import Layout from "./components/layout/Layout";
+import Home from "./home/Home";
 
 function App() {
-  return <Layout />;
+  return(
+    <div><Home/></div>
+  )
 }
 
 export default App;
