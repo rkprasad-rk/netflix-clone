@@ -11,13 +11,13 @@ function Lists() {
     setIsMoved(true);
     const listCurrent = listRef.current;
     if (listCurrent) {
-      const distance = listCurrent.getBoundingClientRect().x - 48;
+      const distance = listCurrent.getBoundingClientRect().x - 64;
       if (direction === "left" && isSlideNumber > 0) {
         setSlideNumber(isSlideNumber - 1);
-        listCurrent.style.transform = `translateX(${224 + distance}px)`;
-      } else if (direction === "right" && isSlideNumber < 4) {
+        listCurrent.style.transform = `translateX(${294 + distance}px)`;
+      } else if (direction === "right" && isSlideNumber < 5) {
         setSlideNumber(isSlideNumber + 1);
-        listCurrent.style.transform = `translateX(${-224 + distance}px)`;
+        listCurrent.style.transform = `translateX(${-294 + distance}px)`;
       }
     }
   }
@@ -34,28 +34,30 @@ function Lists() {
           onClick={() => {
             handleClick("left");
           }}
-          className={`${isMoved ? "block" : "hidden"}`}
+          className={`${
+            isMoved ? "block" : "hidden"
+          } absolute left-0 z-10 top-0 bottom-0`}
         >
           <NavigateBefore
-            className={`text-white bg-[#16161680] absolute left-0 z-10 top-0 bottom-0 mx-auto `}
-            style={{ height: "100%", width: "48px" }}
+            className={`text-white bg-[#16161680]  `}
+            style={{ height: "100%", width: "64px" }}
           />
         </button>
 
         <div
-          className="ml-16 flex w-max gap-x-2.5 transform translate-x-0 transition-all ease-in duration-300"
+          className="ml-16 flex w-max transform translate-x-0 transition-all ease-in duration-300 h-32 relative"
           ref={listRef}
         >
-          <ListItems />
-          <ListItems />
-          <ListItems />
-          <ListItems />
-          <ListItems />
-          <ListItems />
-          <ListItems />
-          <ListItems />
-          <ListItems />
-          <ListItems />
+          <ListItems index={0} />
+          <ListItems index={1} />
+          <ListItems index={2} />
+          <ListItems index={3} />
+          <ListItems index={4} />
+          <ListItems index={5} />
+          <ListItems index={6} />
+          <ListItems index={7} />
+          <ListItems index={8} />
+          <ListItems index={9} />
         </div>
 
         <button
@@ -64,10 +66,11 @@ function Lists() {
           onClick={() => {
             handleClick("right");
           }}
+          className="absolute right-0 z-10 top-0 bottom-0 "
         >
           <NavigateNext
-            className="text-white w-12 bg-[#16161680] absolute right-0 z-10 top-0 bottom-0 mx-auto"
-            style={{ height: "100%", width: "48px" }}
+            className="text-white w-12 bg-[#16161680] "
+            style={{ height: "100%", width: "64px" }}
           />
         </button>
       </div>

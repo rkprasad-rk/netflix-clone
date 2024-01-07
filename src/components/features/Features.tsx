@@ -5,9 +5,9 @@ interface FeaturesProps {
 }
 function Features({ type }: FeaturesProps) {
   return (
-    <div className="h-[90vh] relative">
+    <div className="h-[90vh] bg-[url('https://cdn.mos.cms.futurecdn.net/kgyEqcbXJ93gFkLD8GuJDF.jpg')] bg-cover bg-no-repeat bg-center relative">
       {type && (
-        <div className="absolute  top-28 left-16 text-3xl flex items-center z-20 text-white">
+        <div className="absolute top-24 left-16 text-3xl flex items-center  z-10 text-white">
           <span>{type === "movie" ? "Movies" : "Series"}</span>
           <select
             name="genre"
@@ -36,14 +36,10 @@ function Features({ type }: FeaturesProps) {
           </select>
         </div>
       )}
-      <span className=" absolute bg-gradient-to-t from-black via-transparent to-black h-full w-full z-10" />
-      <img
-        className="h-full w-full object-cover"
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/c38a2d52-138e-48a3-ab68-36787ece46b3/eeb03fc9-99c6-438e-824d-32917ce55783/IN-en-20240101-popsignuptwoweeks-perspective_alpha_website_large.jpg "
-        alt="background_image"
-      />
 
-      <div className="w-2/6 left-16 bottom-24 absolute text-white z-10 flex flex-col ">
+      <span className=" absolute bg-gradient-to-t from-black via-transparent to-black h-[90vh]  w-full inset-0 " />
+
+      <div className="w-2/6 left-16 bottom-24 absolute text-white  flex flex-col ">
         <img
           className="w-5/6 mb-5"
           src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pngarts.com%2Ffiles%2F9%2FMatrix-Logo-Transparent-Image.png&f=1&nofb=1&ipt=835df921a7bd455779a44faefd0425c862ce603a41795bc1b711f3a95cd9aad5&ipo=images"
